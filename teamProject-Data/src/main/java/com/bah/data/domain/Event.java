@@ -1,5 +1,3 @@
-package com.bah.data.domain;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,55 +6,37 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="EVENTS")
+@Table(name = "EVENTS")
 public class Event {
-	//  Workshop:
+	// Workshop:
 	//
-	//  Create an Event class, and implement methods to manage event data.
-//	"ID" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), 
-//	"EVENT_CODE" VARCHAR(255), 
-//	TITLE VARCHAR(255), 
-//	DESCRIPTION VARCHAR(255)
-		
+	// Create an Event class, and implement methods to manage event data.
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	long id;
 
 	@Column(name = "EVENT_CODE")
-	String eventCode;
+	String code;
 
-	@Column(name = "TITLE")
 	String title;
 
-	@Column(name = "DESCRIPTION")
 	String description;
 
-	public Event() {
-		
-	}
-	
-	public Event(Long id, String eventCode, String title, String description) {
-		super();
-		this.id = id;
-		this.eventCode = eventCode;
-		this.title = title;
-		this.description = description;
-	}
-
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getEventCode() {
-		return eventCode;
+	public String getCode() {
+		return code;
 	}
 
-	public void setEventCode(String eventCode) {
-		this.eventCode = eventCode;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getTitle() {
@@ -73,8 +53,5 @@ public class Event {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}	
-	
-	
-	
+	}
 }
